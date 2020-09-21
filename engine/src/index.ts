@@ -13,7 +13,7 @@ const completeRound = (profileId: number, day: number, callback?: () => void) =>
         const algorithmCallback = (result?: any[]) => {
             if (result) {
                 const actions = result.map(elem => parseJSON(elem) as StockAction);
-                actions.forEach(action => performStockAction(profileId, action, day)); 
+                actions.forEach(action => performStockAction(profileId, action, day));
                 callback?.()
             }
         };
@@ -31,7 +31,11 @@ export const performRounds = (profileId: number, startDay: number, days: number)
             completeRound(profileId, currentDay, callback);
         }
         currentDay++;
+
+        console.log(profiles)
     }
     completeRound(profileId, currentDay, callback);
 };
 
+//performRounds(1,0,3)
+pyReader.runScript('../', 'stock_data.py', [10, '2018-10-01'] )

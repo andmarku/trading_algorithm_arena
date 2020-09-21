@@ -2,8 +2,9 @@ import csv
 import glob
 import numpy as np
 import pandas as pd
+import sys, json
 
-def (window, start_date):
+def create_stock_df(window, start_date):
     # TODO: temp solution
     window = 1000
     start_date = pd.Timestamp('2018-01-17')
@@ -49,3 +50,7 @@ def (window, start_date):
     df = pd.concat(li, join='outer', axis=1)
 
     return df
+
+#window = sys.argv[1]
+#start_date = sys.argv[2]
+create_stock_df('window', 'start_date')
