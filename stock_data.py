@@ -2,7 +2,10 @@ import csv
 import glob
 import numpy as np
 import pandas as pd
+<<<<<<< HEAD
 from pandas.tseries.offsets import BDay # BDay for business day
+=======
+>>>>>>> updated with respect to time window and improved comments
 
 def calculateDates(small_window, window, start_date):
     # create a start date
@@ -55,4 +58,8 @@ def import_stock_data(window, start_date):
     # remove dates (anonymises the time window somewhat)
     df.reset_index(drop=True)
 
+<<<<<<< HEAD
     return(df)
+=======
+    return df
+>>>>>>> updated with respect to time window and improved comments
