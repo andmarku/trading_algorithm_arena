@@ -1,2 +1,6 @@
 data/
 .ipynb_checkpoints
+<<<<<<< HEAD
+=======
+*.ipynb
+>>>>>>> Update .gitignore
