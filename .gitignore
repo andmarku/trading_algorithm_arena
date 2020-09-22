@@ -2,8 +2,14 @@ data/
 .ipynb_checkpoints
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 *.ipynb
 >>>>>>> Update .gitignore
 =======
+>>>>>>> Update .gitignore
+=======
+=======
+*.ipynb
+>>>>>>> Update .gitignore
 >>>>>>> Update .gitignore
