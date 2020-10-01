@@ -78,7 +78,7 @@ def clean_combined_df(df):
     df = df.astype(np.float16)
 
     return(df)
-
+ 
 
 def import_stock_data(nr_days_of_history, nr_days_to_trade, start_date_str):
     """
