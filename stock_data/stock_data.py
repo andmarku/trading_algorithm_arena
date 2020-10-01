@@ -5,6 +5,7 @@ import pandas as pd
 from pandas.tseries.offsets import BDay # BDay for business day
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 def create_stock_df(nr_days_to_trade=500, start_date_str='2017-01-17', nr_days_of_history=10):
     """
     Wrapper for importing the stock data
@@ -17,6 +18,13 @@ def create_stock_df(nr_days_to_trade=100, start_date_str='2017-01-17', nr_days_o
     Wrapper for importing the stock data
     """
 >>>>>>> many small improvements and more comments
+=======
+def create_stock_df(nr_days_to_trade=500, start_date_str='2017-01-17', nr_days_of_history=10):
+    """
+    Wrapper for importing the stock data
+    """
+
+>>>>>>> improved data cleaning: fixed bug in data (duplicates) and reduced the size of the total date frame
     return(import_stock_data(nr_days_of_history, nr_days_to_trade, start_date_str))
 
 
@@ -26,9 +34,13 @@ def calculateDates(nr_days_of_history, nr_days_to_trade, start_date_str):
     - The start date is moved backward in order to include the history_window for the first day of trading.
     """
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> many small improvements and more comments
+=======
+
+>>>>>>> improved data cleaning: fixed bug in data (duplicates) and reduced the size of the total date frame
     # create a start date
     start_date = pd.Timestamp(start_date_str)
 
@@ -43,12 +55,11 @@ def calculateDates(nr_days_of_history, nr_days_to_trade, start_date_str):
 <<<<<<< HEAD
 =======
 
-# todo do proper check for file not found
-# todo temporary limitation of the nr of stocks
-def import_stock_data(nr_days_of_history, nr_days_to_trade, start_date_str):
+def read_in_as_list_of_dfs(all_files,start_date,end_date):
     """
-    Imports the relevant data from the text file system as a pandas data frame
+    Create list of cleaned data frames of the stock data in the specified files
     """
+<<<<<<< HEAD
     # OBS!!!!!! temporary limitation for the size of the data frame
     size_of_subset = 100
     
@@ -64,6 +75,8 @@ def read_in_as_list_of_dfs(all_files,start_date,end_date):
     """
     Create list of cleaned data frames of the stock data in the specified files
     """
+=======
+>>>>>>> improved data cleaning: fixed bug in data (duplicates) and reduced the size of the total date frame
     # create an empty list to add each (relevant) stock's data frame
     li=[]
 
@@ -129,19 +142,28 @@ def import_stock_data(nr_days_of_history, nr_days_to_trade, start_date_str):
     df = pd.concat(li, join='outer', axis=1)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     # clean the combined data frame
     df = clean_combined_df(df)
 =======
     # remove dates (anonymises the time window somewhat)
     #df.reset_index(drop=True)
 >>>>>>> many small improvements and more comments
+=======
+    # clean the combined data frame
+    df = clean_combined_df(df)
+>>>>>>> improved data cleaning: fixed bug in data (duplicates) and reduced the size of the total date frame
 
     return(df)
 
 #window = sys.argv[1]
 #start_date = sys.argv[2]
 <<<<<<< HEAD
+<<<<<<< HEAD
 create_stock_df()
 =======
 create_stock_df()
 >>>>>>> many small improvements and more comments
+=======
+create_stock_df()
+>>>>>>> improved data cleaning: fixed bug in data (duplicates) and reduced the size of the total date frame
