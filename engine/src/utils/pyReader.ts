@@ -6,7 +6,7 @@ const runScript = async (path: string, script: string, args: any[] = [], callbac
     
     PythonShell.run(script, options, (err, results) => {
         if (err) throw err;
-       // console.log('results: ', results);
+        console.log('results: ', results);
         callback?.(results ?? []);
     });
 };

@@ -37,5 +37,4 @@ export const performRounds = (profileId: number, startDay: number, days: number)
     completeRound(profileId, currentDay, callback);
 };
 
-//performRounds(1,0,3)
-pyReader.runScript('../', 'stock_data.py', [10, '2018-10-01'] )
+pyReader.runScript('../stock_data', 'stock_data.py')

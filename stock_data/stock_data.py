@@ -4,13 +4,13 @@ import numpy as np
 import pandas as pd
 from pandas.tseries.offsets import BDay # BDay for business day
 
-def create_stock_df(nr_days_to_trade=500, start_date_str='2017-01-17', nr_days_of_history=10):
+def create_stock_df(nr_days_to_trade=1, start_date_str='2017-01-17', nr_days_of_history=1):
     """
     Wrapper for importing the stock data
     """
 
-    return(import_stock_data(nr_days_of_history, nr_days_to_trade, start_date_str))
-
+    print(import_stock_data(nr_days_of_history, nr_days_to_trade, start_date_str).to_csv())
+   # return(import_stock_data(nr_days_of_history, nr_days_to_trade, start_date_str))
 
 def calculateDates(nr_days_of_history, nr_days_to_trade, start_date_str):
     """
@@ -44,7 +44,7 @@ def read_in_as_list_of_dfs(all_files,start_date,end_date):
         
         # basic trimming: drop all extra columns,rename the stock value column after the stock
         df = df.drop(labels=list(['volume','close','high','low','adjclose']), axis='columns') 
-        stock_name = filename.split(sep='/')[3].split(sep='.')[0].lower()
+        stock_name = filename.split(sep='/')[4].split(sep='.')[0].lower()
         df = df.rename(columns={'open': stock_name})
         
         # fit to time window: selct only rows with relevant dates and ignore stocks without relevant values
@@ -89,7 +89,8 @@ def import_stock_data(nr_days_of_history, nr_days_to_trade, start_date_str):
     dates = calculateDates(nr_days_of_history = nr_days_of_history, nr_days_to_trade = nr_days_to_trade, start_date_str = start_date_str)
 
     # list the files to be read
-    path = "./data/full_history/*.csv"
+    #path = "./data/full_history/*.csv"
+    path = "../stock_data/data/full_history/*.csv"
     all_files = np.array(glob.glob(path))
 
     # read in the data frames from the files
