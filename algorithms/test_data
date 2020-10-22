@@ -1,1 +1,1 @@
-{"capital":1,"stocks":[{"id":1,"name":"first","value":[1,0,0]},{"id":2,"name":"second","value":[2,3,4]}],"portfolio":{"stocks":[1,2],"shares":[5,7]}}
+{"capital":9,"stocks":[{"id":1,"name":"first","value":[1,0,0]},{"id":2,"name":"second","value":[2,3,4]}],"portfolio":{"stocks":[1,2],"shares":[5,7]}}

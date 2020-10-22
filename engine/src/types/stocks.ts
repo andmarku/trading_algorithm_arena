@@ -19,4 +19,5 @@ export type StockInput = {
 export type StockAction = {
     stockId: number,
     quantity: number,
+    selling: boolean
 };

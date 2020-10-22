@@ -59,7 +59,7 @@ let myStocks: Stock[] =
     }];
 
 let input: StockInput = {
-    capital: 1,
+    capital: 9,
     stocks: myStocks,
     portfolio: myPort,
 };

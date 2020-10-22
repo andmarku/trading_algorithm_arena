@@ -21,12 +21,13 @@ const runScript = async (path: string, script: string, args: StockInput, callbac
         if (err) throw err;
         if(results != null){
             console.log('returned results in pyshell as text: \n', results);
-            // console.log('returned results in pyshell as text: \n', results[0]);
+            console.log('returned results in pyshell as text: \n', results[0]);
+            
+            // parse to StockAction
             // let returnedJson = JSON.parse(results[0])
             // console.log('returned results in pyshell as json: \n', returnedJson);
             // console.log('returned results in pyshell: values in value array: \n', returnedJson['stocks'][0]['value']);
 
-            // parse to StockAction
             // export type StockAction = {
             //     stockId: number,
             //     quantity: number,
@@ -35,8 +36,8 @@ const runScript = async (path: string, script: string, args: StockInput, callbac
 
         callback?.(results ?? []);
     }); 
-};
- 
+}; 
+  
 export default {
     runScript,
 };
