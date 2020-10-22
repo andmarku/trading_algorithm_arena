@@ -1,12 +1,13 @@
-export type Portfolio = {
-    [stockId: number]: number,
-};
-
 export type Stock = {
     id: number,
     name: string,
-    value: number,
+    value: number[],
     available?: number,
+};
+
+export type Portfolio = {
+    stocks: number[]
+    shares: number[],
 };
 
 export type StockInput = {
